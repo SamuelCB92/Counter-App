@@ -9,14 +9,21 @@ export default function App() {
 
 
   function increment(IncrementValue) {
-    setCount(prevCount => prevCount + IncrementValue);
-    setHistory([...history, count+IncrementValue]);
+    setCount(prevCount => {
+      const newCount = prevCount + IncrementValue;
+      setHistory(prevHistory => [...prevHistory, newCount]);
+      return newCount;
+    });
   }
-
-  function reset(){
-    setCount(prevCount => prevCount * 0);
-    setHistory([...history, 0]);
+  
+  function reset() {
+    setCount(() => {
+      const newCount = 0;
+      setHistory(prevHistory => [...prevHistory, newCount]);
+      return newCount;
+    });
   }
+  
 
   return (
     <div>
