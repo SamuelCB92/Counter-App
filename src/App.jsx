@@ -24,9 +24,10 @@ export default function App() {
     });
   }
   
+  
 
   return (
-    <div>
+    <div className="app-container">
       <h1>Contador: {count}</h1>
       <IncrementButton onIncrement={increment} />
       <ResetButton reset={reset} />
