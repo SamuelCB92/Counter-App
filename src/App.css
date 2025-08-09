@@ -7,25 +7,13 @@
   border: 2px solid #333;
   border-radius: 8px;
   font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
+  background-color: darkkhaki;
   text-align: center;
 }
 
 h1 {
   font-size: 3rem;
   margin-bottom: 20px;
-}
-
-button.box {
-  font-size: 1.5rem;
-  margin: 5px;
-  padding: 10px 20px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-  background-color: #6200ee;
-  color: white;
-  transition: background-color 0.3s ease;
 }
 
 button.box:hover {
@@ -48,10 +36,38 @@ li {
   padding: 4px 0;
 }
 
-.buttons-container {
-  display: flex;
-  justify-content: center;
-  gap: 10px; /* espaço entre os botões */
-  flex-wrap: wrap; /* quebra a linha se a tela for pequena */
-  margin-bottom: 20px;
+
+body {
+  display: flex;                /* Ativa o Flexbox */
+  justify-content: center;      /* Centraliza na horizontal */
+  align-items: center;          /* Centraliza na vertical */
+  height: 100vh;                /* Ocupa 100% da altura da tela */
+  margin: 0;                    /* Remove espaçamentos padrão */
+  background-color: gray;    /* Fundo claro */
+}
+
+.counter {
+  padding: 20px 40px;           /* Espaço interno */
+  border-radius: 10px;          /* Bordas arredondadas */
+  text-align: center;           /* Centraliza o texto */
+}
+
+.counter h1 {
+  font-size: 3rem;              /* Número grande */
+  margin-bottom: 20px;          /* Espaço abaixo */
+}
+
+.counter button {
+  background-color: #007bff;    /* Azul */
+  color: white;                 /* Texto branco */
+  border: none;                 /* Remove borda padrão */
+  padding: 10px 20px;           /* Espaço interno */
+  margin: 0 5px;                /* Espaço entre botões */
+  border-radius: 5px;           /* Arredonda bordas */
+  cursor: pointer;              /* Mãozinha no hover */
+  font-size: 1rem;              /* Tamanho do texto */
+}
+
+.counter button:hover {
+  background-color: #0056b3;    /* Azul mais escuro no hover */
 }
