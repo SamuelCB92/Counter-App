@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
 
-function App() {
+
+function IncrementButton({ onIncrement }) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <button className="box" onClick={() => onIncrement(1)}>+1</button>
+      <button className="box" onClick={() => onIncrement(5)}>+5</button>
     </div>
   );
 }
 
-export default App;
+export default function App() {
+  const [count, setCount] = useState(0);
+  const [history, setHistory] = useState([]);
+
+
+  function increment(IncrementValue) {
+    setCount(prevCount => prevCount + IncrementValue);
+    setHistory([...history, count+IncrementValue]);
+  }
+
+  return (
+    <div>
+      <h1>Contador: {count}</h1>
+      <IncrementButton onIncrement={increment} />
+      <h2>Histórico:</h2>
+      <ul>
+        {history.map((value, index) => (
+          <li key={index}>{value}</li>
+        ))}
+        </ul>
+    </div>
+  );
+}
