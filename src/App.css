@@ -35,9 +35,23 @@ button.box:hover {
 ul {
   list-style-type: none;
   padding-left: 0;
+  max-height: 150px;
+  overflow-y: auto;
+  border-top: 1px solid #ccc;
+  margin-top: 10px;
+  text-align: left;
 }
+
 
 li {
   font-size: 1.2rem;
   padding: 4px 0;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* espaço entre os botões */
+  flex-wrap: wrap; /* quebra a linha se a tela for pequena */
+  margin-bottom: 20px;
 }

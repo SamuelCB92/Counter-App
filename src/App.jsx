@@ -29,8 +29,11 @@ export default function App() {
   return (
     <div className="app-container">
       <h1>Contador: {count}</h1>
-      <IncrementButton onIncrement={increment} />
-      <ResetButton reset={reset} />
+      <div className="buttons-container">
+  <IncrementButton onIncrement={increment} />
+  <ResetButton reset={reset} />
+</div>
+
       <h2>Histórico:</h2>
       <ul>
         {history.map((value, index) => (
